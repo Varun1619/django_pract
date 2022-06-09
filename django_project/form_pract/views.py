@@ -21,3 +21,20 @@ def read(request):
     data_list= form_pract.objects.all()
     context = {'data_list' : data_list}
     return render(request, 'form_pract/read.html', context)
+
+def update(request, pk):
+    data_list = form_pract.objects.get(id = pk)
+    form = form_practForm(instance=data_list)
+    if request.method == 'POST':
+        form = formx_practForm(request.POST, instance=data_list)
+        if form.is_valid():
+            form.save()
+            return redirect('read')
+    context = {'form' : form}
+    return render(request, 'form_pract/update.html',context)
+
+def delete_data(request,pk):
+    data_list = form_pract.objects.get(id = pk)
+    data_list.delete()
+    context = {'data_list' : data_list}
+    return redirect('read')

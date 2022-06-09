@@ -5,7 +5,7 @@
     <thead class="">
       <tr>
         <th scope="col">NAME</th>
-        <th scope="col" class="text-center  " >EMAIL</th>
+        <th scope="col" class="text-center " >EMAIL</th>
         <th scope="col">CONATCT</th>
         <th scope="col">MESSAGE</th>
         <th scope="col"></th>
@@ -20,12 +20,12 @@
         <td>{{data.contact}}</td>
         <td>{{data.message}}</td>
         <td>
-            <a href="{% url 'index' %}">
-                <input class="app-form-button" type="submit" value="EDIT">
+            <a href="{% url 'update' data.id %}">
+                <input class="app-form-button" class ='text-success' type="submit" value="UPDATE">
             </a>
         </td>
         <td>
-            <a href="{% url 'index' %}">
+            <a href="{% url 'delete' data.id %}">
                 <input class="app-form-button" type="submit" value="DELETE">
             </a>
         </td>
