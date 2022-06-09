@@ -1,0 +1,18 @@
+{% extends 'form_pract/base.html' %}
+{% block content %}
+<div class="app-form">
+    <form method = 'POST'>    
+        {% csrf_token %}
+        <div class="app-form-group">
+            <!-- <input class="app-form-control" placeholder="NAME"> -->
+            
+            {{form.as_p}}
+        </div>
+        <div class="app-form-group buttons">
+            <!-- <button class="app-form-button">CANCEL</button> -->
+  
+            <input class="app-form-button" type="submit" value="SUBMIT"> 
+          </div>
+    </form>
+</div>
+{% endblock content %}
